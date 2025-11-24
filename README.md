@@ -1,6 +1,8 @@
 # ProjekAkhirSem1.v2 — Sistem Kantin (C++)
 
-Sistem Kantin sederhana berbasis konsol yang dibuat dalam bahasa C++. Proyek ini memungkinkan pengelolaan menu kantin, keranjang pesanan, transaksi, dan pembuatan struk.
+Projek Akhir Semester 1. Sistem Kantin sederhana berbasis konsol yang dibuat dalam bahasa C++. Proyek ini memungkinkan pengelolaan menu kantin, keranjang pesanan, transaksi, dan pembuatan struk.
+
+## Langsung klik "kantin.exe" untuk menjalankan programnya
 
 ## Fitur
 
@@ -17,42 +19,29 @@ Sistem Kantin sederhana berbasis konsol yang dibuat dalam bahasa C++. Proyek ini
 projekAkhirSem1.v2/
 │
 ├── data/
-│   └── input.txt              # File menu awal
+│   └── input.txt
 ├── include/
-│   ├── Kantin.h  
-│   ├── MenuManager.h  
-│   ├── CartManager.h  
-│   └── TransactionManager.h  
+│   ├── CartItem.h
+│   ├── CartManager.h
+│   ├── Item.h
+│   ├── Kantin.h
+│   ├── MenuItem.h
+│   ├── MenuManager.h
+│   └── TransactionManager.h
 ├── src/
-│   ├── Kantin.cpp  
-│   ├── MenuManager.cpp  
-│   ├── CartManager.cpp  
-│   ├── TransactionManager.cpp  
-│   └── main.cpp  
-└── kantin.exe                 # (atau file .out jika di Linux)
+│   ├── CartItem.cpp
+│   ├── CartManager.cpp
+│   ├── Item.cpp
+│   ├── Kantin.cpp
+│   ├── main.cpp
+│   ├── MenuItem.cpp
+│   ├── MenuManager.cpp
+│   └── TransactionManager.cpp
+└── kantin.exe              # 
 ```
 
-## Cara Build
-
-Gunakan **g++** untuk mengompilasi kode:
-
-1. Buka terminal / command prompt di direktori proyek:  
-   ```bash
-   cd D:\@Kuliah\Programan Dasar\projekAkhirSem1.v2
-   ```
-2. Jalankan perintah berikut:  
-   ```bash
-   g++ -Iinclude src/*.cpp -o kantin.exe
-   ```
-
-   Penjelasan:
-   - `-Iinclude`: menambahkan direktori header  
-   - `src/*.cpp`: mengompilasi semua file .cpp  
-   - `-o kantin.exe`: menghasilkan executable `kantin.exe`
-
 ## Cara Menjalankan
-
-Setelah kompilasi selesai, jalankan dengan:
+Jalankan dengan:
 
 ```bash
 ./kantin.exe
@@ -68,20 +57,35 @@ Pastikan `data/input.txt` berada di folder `data/` dalam direktori yang sama den
 
 ## Format File `input.txt`
 
-File `input.txt` berisi daftar menu awal. Contoh format (misalnya):
+File `input.txt` berisi daftar menu awal. Dengan format:
+"(id)|(Nama ItemMenu)|(Harga)|(Jumlah Stok)"
+
+Contoh penulisan format pada "input.txt"
 
 ```
-Nasi Goreng, 15000, 20  
-Mie Ayam, 12000, 30  
-Es Teh, 5000, 50  
+1|Nasi Goreng|15000|20
+2|Mie Ayam|12000|25
+3|Soto Ayam|18000|15
 ```
 
-Kolom: **nama item**, **harga (int)**, **stok (int)** — dipisah koma.
 
 ## Contoh Alur Penggunaan
 
 1. Program dijalankan → `initialize()` membaca `input.txt`.  
-2. Menu utama tampil: tambah/edit/hapus menu, transaksi, dsb.  
+2. Menu utama tampil: 
+
+...
+Menu berhasil dimuat dari data/input.txt.
+
+=== Sistem Kantin ===
+1. Tambah menu
+2. Edit menu
+3. Hapus menu
+4. Tampilkan menu
+5. Transaksi
+0. Keluar
+Pilih:
+...
 3. Jika pilih “Transaksi”:
    - Lihat menu  
    - Tambah item ke keranjang  
@@ -89,19 +93,15 @@ Kolom: **nama item**, **harga (int)**, **stok (int)** — dipisah koma.
    - Hapus item dari keranjang jika perlu  
    - Checkout → struk dicetak  
    - Jika batal → stok dikembalikan  
-4. Setelah transaksi, kembali ke menu utama atau keluar.
+4. Setelah transaksi, kembali ke menu utama dan mengeluarkan output "receipt.txt" yang berisikan struk pembelanjaan kita.
 
 ## Catatan
 
 - Saat `input.txt` tidak ditemukan, program memulai dengan menu kosong dan Anda bisa menambahkan item secara manual.  
-- Pastikan path file `input.txt` benar di `Kantin::initialize()`.  
-
-## Pengembangan / Kontribusi
-
-- Anda bisa menambahkan fitur penyimpanan menu otomatis setelah edit.  
-- Buat sistem login (admin / user) jika ingin memperluas.  
-- Sistem bisa diperluas ke GUI (Qt atau lainnya).  
+- Pastikan file `input.txt` benar pathnya di `data/input.txt`.  
 
 ## Penulis
 
-*[Nama Kamu]* — (ganti dengan namamu)
+Muhammad Wafdan Taqiyya (25/555458/TK/62628)
+Gary Christian Wijaya (25/555305/TK/62611)
+Muhammad Fazli (25/560578/TK/63319)
