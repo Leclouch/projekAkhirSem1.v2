@@ -74,7 +74,7 @@ Contoh penulisan format pada "input.txt"
 1. Program dijalankan → `initialize()` membaca `input.txt`.  
 2. Menu utama tampil: 
 
-...
+```
 Menu berhasil dimuat dari data/input.txt.
 
 === Sistem Kantin ===
@@ -85,7 +85,8 @@ Menu berhasil dimuat dari data/input.txt.
 5. Transaksi
 0. Keluar
 Pilih:
-...
+```
+
 3. Jika pilih “Transaksi”:
    - Lihat menu  
    - Tambah item ke keranjang  
