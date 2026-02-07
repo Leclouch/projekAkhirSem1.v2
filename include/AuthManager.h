@@ -3,7 +3,7 @@
 
 #include <string>
 using namespace std;
-
+//keren
 // ===== AUTH MANAGER CLASS (Simplified) =====
 // Mengelola autentikasi sederhana
 class AuthManager
